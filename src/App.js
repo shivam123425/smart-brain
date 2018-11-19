@@ -8,7 +8,7 @@ import Logo from "./components/Logo/Logo";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
 import Modal from "./components/Modal/Modal";
-import Profile from './components/Profile/Profile';
+import Profile from "./components/Profile/Profile";
 import "./App.css";
 
 const particlesOptions = {
@@ -35,7 +35,9 @@ const initialState = {
     name: "",
     email: "",
     entries: 0,
-    joined: ""
+    joined: "",
+    pet: "",
+    age: null
   }
 };
 
@@ -52,7 +54,9 @@ class App extends Component {
         name: data.name,
         email: data.email,
         entries: data.entries,
-        joined: data.joined
+        joined: data.joined,
+        age: data.age,
+        pet: data.pet
       }
     });
   };
@@ -141,6 +145,7 @@ class App extends Component {
             <Profile
               isProfileOpen={isProfileOpen}
               toggleModal={this.toggleModal}
+              user={this.state.user}
             />
           </Modal>
         )}
